@@ -21,7 +21,8 @@ import {
   Database,
   RefreshCw,
   Info,
-  Download
+  Download,
+  AlertTriangle
 } from "lucide-react";
 import {
   ResponsiveContainer,
@@ -97,6 +98,12 @@ const getColorClass = (index: number) => {
     "bg-[#f43f5e]"
   ];
   return classes[index % classes.length];
+};
+
+// Returns true if the code exists but doesn't look like a real doctor code
+// Valid codes are 3-digit zero-padded numbers (e.g. "001", "042")
+const isInvalidDoctorCode = (code: string): boolean => {
+  return !/^\d{3}$/.test(code);
 };
 
 export default function DashboardPage() {
@@ -1085,8 +1092,44 @@ export default function DashboardPage() {
                         <tbody className="divide-y divide-white/5 text-slate-300">
                           {paginatedDoctors.length > 0 ? (
                             paginatedDoctors.map((d) => (
-                              <tr key={d.code} className="hover:bg-white/1 transition-colors">
-                                <td className="px-4 py-3 font-mono font-semibold text-white">{d.code || "Tidak Terdaftar"}</td>
+                              <tr key={d.code || "__unregistered__"} className={`hover:bg-white/1 transition-colors ${
+                                !d.code
+                                  ? "bg-amber-500/[0.03]"
+                                  : isInvalidDoctorCode(d.code)
+                                  ? "bg-yellow-500/[0.03]"
+                                  : ""
+                              }`}>
+                                <td className="px-4 py-3 font-mono font-semibold text-white">
+                                  {!d.code ? (
+                                    /* No code at all — Tidak Terdaftar */
+                                    <span className="relative group inline-flex items-center gap-1.5">
+                                      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-400 text-[10px] font-semibold">
+                                        <AlertTriangle className="h-3 w-3" />
+                                        Tidak Terdaftar
+                                      </span>
+                                      <span className="pointer-events-none absolute left-full ml-2 top-1/2 -translate-y-1/2 z-20 w-56 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-[#0d1426] border border-amber-500/25 rounded-xl p-3 text-[10px] text-slate-300 leading-relaxed shadow-2xl">
+                                        <span className="font-semibold text-amber-400 block mb-1">⚠ Catatan Data</span>
+                                        Resep ini tidak memiliki kode dokter yang valid dalam sistem. Kemungkinan berasal dari pembelian bebas (OTC) atau data input yang tidak lengkap.
+                                      </span>
+                                    </span>
+                                  ) : isInvalidDoctorCode(d.code) ? (
+                                    /* Code exists but doesn't match the 3-digit numeric format */
+                                    <span className="relative group inline-flex items-center gap-2">
+                                      <span className="font-mono text-slate-400 text-[10px]">{d.code}</span>
+                                      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-yellow-500/10 border border-yellow-500/20 text-yellow-400 text-[10px] font-semibold">
+                                        <AlertTriangle className="h-3 w-3" />
+                                        Kode Tidak Valid
+                                      </span>
+                                      <span className="pointer-events-none absolute left-full ml-2 top-1/2 -translate-y-1/2 z-20 w-60 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-[#0d1426] border border-yellow-500/25 rounded-xl p-3 text-[10px] text-slate-300 leading-relaxed shadow-2xl">
+                                        <span className="font-semibold text-yellow-400 block mb-1">⚠ Kode Tidak Dikenali</span>
+                                        Kode <span className="font-mono text-yellow-300">{d.code}</span> tidak sesuai format kode dokter standar (3 digit angka). Kemungkinan kode internal sistem atau nomor registrasi yang salah input.
+                                      </span>
+                                    </span>
+                                  ) : (
+                                    /* Valid doctor code */
+                                    d.code
+                                  )}
+                                </td>
                                 <td className="px-4 py-3 text-right font-semibold">{formatNum(d.recipes)}</td>
                                 <td className="px-4 py-3 text-right text-sky-400">{formatIDR(d.revenue)}</td>
                                 <td className="px-4 py-3 text-right text-emerald-400">{formatIDR(d.avg_per_recipe)}</td>
@@ -1128,6 +1171,15 @@ export default function DashboardPage() {
                           </div>
                         </div>
                       )}
+                    </div>
+
+                    {/* Data Quality Note */}
+                    <div className="mt-2 p-3 rounded-xl bg-amber-500/5 border border-amber-500/15 text-[10px] leading-relaxed text-slate-400 flex items-start gap-2">
+                      <AlertTriangle className="h-3.5 w-3.5 text-amber-400 shrink-0 mt-0.5" />
+                      <p>
+                        <span className="font-semibold text-amber-400">Catatan Kualitas Data: </span>
+                        Entri berlabel <span className="font-semibold text-amber-300">"Tidak Terdaftar"</span> tidak memiliki kode dokter sama sekali. Entri berlabel <span className="font-semibold text-yellow-300">"Kode Tidak Valid"</span> memiliki kode yang tidak sesuai format standar 3-digit (contoh: <span className="font-mono">DISP_IF</span>, <span className="font-mono">RL-11.2014-xx-0</span>) — kemungkinan kode internal sistem atau nomor SIP yang salah input. Semua data ini tetap dihitung dalam total omzet.
+                      </p>
                     </div>
                   </div>
 
