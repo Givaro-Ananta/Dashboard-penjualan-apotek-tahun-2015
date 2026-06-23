@@ -246,7 +246,7 @@ export default function DashboardPage() {
   // ── DYNAMIC MONTHLY TREND CALCULATION ──────────────────────────────────────
   const monthlyTrendChartData = useMemo(() => {
     const monthlyMap: Record<string, typeof filteredMetrics> = {};
-    
+
     // Seed all months to prevent gaps
     months.forEach((m) => {
       monthlyMap[m] = {
@@ -387,7 +387,7 @@ export default function DashboardPage() {
           const isRevenue = key === "Revenue";
           const bgClass = isRevenue ? "bg-[#0ea5e9]" : "bg-[#10b981]";
           const borderClass = isRevenue ? "border-[#0ea5e9]" : "border-[#10b981]";
-          
+
           return (
             <button
               key={`legend-item-${index}`}
@@ -395,18 +395,16 @@ export default function DashboardPage() {
                 if (key === "Revenue") setShowRevenue(!showRevenue);
                 if (key === "Profit") setShowProfit(!showProfit);
               }}
-              className={`flex items-center gap-2 cursor-pointer select-none transition-all duration-200 hover:opacity-85 ${
-                isHidden ? "opacity-35" : "opacity-100"
-              }`}
+              className={`flex items-center gap-2 cursor-pointer select-none transition-all duration-200 hover:opacity-85 ${isHidden ? "opacity-35" : "opacity-100"
+                }`}
               title={`Klik untuk menampilkan/menyembunyikan ${value}`}
             >
               {/* Line and circle icon mimicking Recharts default */}
               <span className="flex items-center">
                 <span className={`w-2.5 h-0.5 ${bgClass}`} />
-                <span 
-                  className={`w-2.5 h-2.5 rounded-full border shrink-0 transition-colors ${borderClass} ${
-                    isHidden ? "bg-transparent" : bgClass
-                  }`}
+                <span
+                  className={`w-2.5 h-2.5 rounded-full border shrink-0 transition-colors ${borderClass} ${isHidden ? "bg-transparent" : bgClass
+                    }`}
                 />
                 <span className={`w-2.5 h-0.5 ${bgClass}`} />
               </span>
@@ -533,11 +531,10 @@ export default function DashboardPage() {
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`flex items-center gap-2 px-4 py-3 text-sm font-medium border-b-2 transition-all cursor-pointer whitespace-nowrap ${
-                    isActive
-                      ? "border-sky-500 text-sky-400 bg-sky-500/5"
-                      : "border-transparent text-slate-400 hover:text-slate-200 hover:bg-white/2"
-                  }`}
+                  className={`flex items-center gap-2 px-4 py-3 text-sm font-medium border-b-2 transition-all cursor-pointer whitespace-nowrap ${isActive
+                    ? "border-sky-500 text-sky-400 bg-sky-500/5"
+                    : "border-transparent text-slate-400 hover:text-slate-200 hover:bg-white/2"
+                    }`}
                 >
                   <Icon className="h-4 w-4" />
                   {tab.label}
@@ -817,17 +814,15 @@ export default function DashboardPage() {
                     <div className="flex border border-white/10 rounded-lg overflow-hidden bg-slate-950/40 p-0.5">
                       <button
                         onClick={() => { setProductMetric("qty"); setProdPage(1); }}
-                        className={`px-3 py-1.5 text-xs font-semibold rounded-md transition-colors cursor-pointer ${
-                          productMetric === "qty" ? "bg-sky-500 text-white" : "text-slate-400 hover:text-slate-200"
-                        }`}
+                        className={`px-3 py-1.5 text-xs font-semibold rounded-md transition-colors cursor-pointer ${productMetric === "qty" ? "bg-sky-500 text-white" : "text-slate-400 hover:text-slate-200"
+                          }`}
                       >
                         Berdasarkan Volume (QTY)
                       </button>
                       <button
                         onClick={() => { setProductMetric("revenue"); setProdPage(1); }}
-                        className={`px-3 py-1.5 text-xs font-semibold rounded-md transition-colors cursor-pointer ${
-                          productMetric === "revenue" ? "bg-sky-500 text-white" : "text-slate-400 hover:text-slate-200"
-                        }`}
+                        className={`px-3 py-1.5 text-xs font-semibold rounded-md transition-colors cursor-pointer ${productMetric === "revenue" ? "bg-sky-500 text-white" : "text-slate-400 hover:text-slate-200"
+                          }`}
                       >
                         Berdasarkan Omzet (Rupiah)
                       </button>
@@ -1039,7 +1034,7 @@ export default function DashboardPage() {
                       <table className="w-full text-left border-collapse text-xs">
                         <thead>
                           <tr className="bg-slate-900/60 border-b border-white/5 text-slate-400 uppercase font-semibold tracking-wider select-none">
-                            <th 
+                            <th
                               className="px-4 py-3 cursor-pointer hover:bg-white/5 transition-colors"
                               onClick={() => handleDoctorSort("code")}
                               title="Urutkan berdasarkan Kode Dokter"
@@ -1051,7 +1046,7 @@ export default function DashboardPage() {
                                 </span>
                               </div>
                             </th>
-                            <th 
+                            <th
                               className="px-4 py-3 text-right cursor-pointer hover:bg-white/5 transition-colors"
                               onClick={() => handleDoctorSort("recipes")}
                               title="Urutkan berdasarkan Volume Resep"
@@ -1063,7 +1058,7 @@ export default function DashboardPage() {
                                 </span>
                               </div>
                             </th>
-                            <th 
+                            <th
                               className="px-4 py-3 text-right cursor-pointer hover:bg-white/5 transition-colors"
                               onClick={() => handleDoctorSort("revenue")}
                               title="Urutkan berdasarkan Total Omzet"
@@ -1075,7 +1070,7 @@ export default function DashboardPage() {
                                 </span>
                               </div>
                             </th>
-                            <th 
+                            <th
                               className="px-4 py-3 text-right cursor-pointer hover:bg-white/5 transition-colors"
                               onClick={() => handleDoctorSort("avg_per_recipe")}
                               title="Urutkan berdasarkan Rata-rata per Resep"
@@ -1091,50 +1086,52 @@ export default function DashboardPage() {
                         </thead>
                         <tbody className="divide-y divide-white/5 text-slate-300">
                           {paginatedDoctors.length > 0 ? (
-                            paginatedDoctors.map((d) => (
-                              <tr key={d.code || "__unregistered__"} className={`hover:bg-white/1 transition-colors ${
-                                !d.code
-                                  ? "bg-amber-500/[0.03]"
-                                  : isInvalidDoctorCode(d.code)
-                                  ? "bg-yellow-500/[0.03]"
-                                  : ""
-                              }`}>
-                                <td className="px-4 py-3 font-mono font-semibold text-white">
-                                  {!d.code ? (
-                                    /* No code at all — Tidak Terdaftar */
-                                    <span className="relative group inline-flex items-center gap-1.5">
-                                      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-400 text-[10px] font-semibold">
-                                        <AlertTriangle className="h-3 w-3" />
-                                        Tidak Terdaftar
+                            paginatedDoctors.map((d) => {
+                              const rowBg = !d.code
+                                ? "bg-amber-500/3"
+                                : isInvalidDoctorCode(d.code)
+                                  ? "bg-yellow-500/3"
+                                  : "";
+                              return (
+                                <tr key={d.code || "__unregistered__"} className={`hover:bg-white/1 transition-colors ${rowBg}`}>
+                                  <td className="px-4 py-3 font-mono font-semibold text-white">
+                                    {!d.code ? (
+                                      /* No code at all — Tidak Terdaftar */
+                                      <span className="relative group inline-flex items-center gap-1.5">
+                                        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-400 text-[10px] font-semibold">
+                                          <AlertTriangle className="h-3 w-3" />
+                                          Tidak Terdaftar
+                                        </span>
+                                        <span className="pointer-events-none absolute left-full ml-2 top-1/2 -translate-y-1/2 z-20 w-56 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-[#0d1426] border border-amber-500/25 rounded-xl p-3 text-[10px] text-slate-300 leading-relaxed shadow-2xl">
+                                          <span className="font-semibold text-amber-400 block mb-1">⚠ Catatan Data</span>
+                                          Resep ini tidak memiliki kode dokter yang valid dalam sistem. Kemungkinan berasal dari pembelian bebas (OTC) atau data input yang tidak lengkap.
+                                        </span>
                                       </span>
-                                      <span className="pointer-events-none absolute left-full ml-2 top-1/2 -translate-y-1/2 z-20 w-56 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-[#0d1426] border border-amber-500/25 rounded-xl p-3 text-[10px] text-slate-300 leading-relaxed shadow-2xl">
-                                        <span className="font-semibold text-amber-400 block mb-1">⚠ Catatan Data</span>
-                                        Resep ini tidak memiliki kode dokter yang valid dalam sistem. Kemungkinan berasal dari pembelian bebas (OTC) atau data input yang tidak lengkap.
+                                    ) : isInvalidDoctorCode(d.code) ? (
+                                      /* Code exists but doesn't match the 3-digit numeric format */
+                                      <span className="relative group inline-flex items-center gap-2">
+                                        <span className="font-mono text-slate-400 text-[10px]">{d.code}</span>
+                                        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-yellow-500/10 border border-yellow-500/20 text-yellow-400 text-[10px] font-semibold">
+                                          <AlertTriangle className="h-3 w-3" />
+                                          Kode Tidak Valid
+                                        </span>
+                                        <span className="pointer-events-none absolute left-full ml-2 top-1/2 -translate-y-1/2 z-20 w-60 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-[#0d1426] border border-yellow-500/25 rounded-xl p-3 text-[10px] text-slate-300 leading-relaxed shadow-2xl">
+                                          <span className="font-semibold text-yellow-400 block mb-1">⚠ Kode Tidak Dikenali</span>
+                                          Kode <span className="font-mono text-yellow-300">{d.code}</span> tidak sesuai format kode dokter standar (3 digit angka). Kemungkinan kode internal sistem atau nomor registrasi yang salah input.
+                                        </span>
                                       </span>
-                                    </span>
-                                  ) : isInvalidDoctorCode(d.code) ? (
-                                    /* Code exists but doesn't match the 3-digit numeric format */
-                                    <span className="relative group inline-flex items-center gap-2">
-                                      <span className="font-mono text-slate-400 text-[10px]">{d.code}</span>
-                                      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-yellow-500/10 border border-yellow-500/20 text-yellow-400 text-[10px] font-semibold">
-                                        <AlertTriangle className="h-3 w-3" />
-                                        Kode Tidak Valid
-                                      </span>
-                                      <span className="pointer-events-none absolute left-full ml-2 top-1/2 -translate-y-1/2 z-20 w-60 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-[#0d1426] border border-yellow-500/25 rounded-xl p-3 text-[10px] text-slate-300 leading-relaxed shadow-2xl">
-                                        <span className="font-semibold text-yellow-400 block mb-1">⚠ Kode Tidak Dikenali</span>
-                                        Kode <span className="font-mono text-yellow-300">{d.code}</span> tidak sesuai format kode dokter standar (3 digit angka). Kemungkinan kode internal sistem atau nomor registrasi yang salah input.
-                                      </span>
-                                    </span>
-                                  ) : (
-                                    /* Valid doctor code */
-                                    d.code
-                                  )}
-                                </td>
-                                <td className="px-4 py-3 text-right font-semibold">{formatNum(d.recipes)}</td>
-                                <td className="px-4 py-3 text-right text-sky-400">{formatIDR(d.revenue)}</td>
-                                <td className="px-4 py-3 text-right text-emerald-400">{formatIDR(d.avg_per_recipe)}</td>
-                              </tr>
-                            ))
+                                    ) : (
+                                      /* Valid doctor code */
+                                      d.code
+                                    )}
+                                  </td>
+                                  <td className="px-4 py-3 text-right font-semibold">{formatNum(d.recipes)}</td>
+                                  <td className="px-4 py-3 text-right text-sky-400">{formatIDR(d.revenue)}</td>
+                                  <td className="px-4 py-3 text-right text-emerald-400">{formatIDR(d.avg_per_recipe)}</td>
+                                </tr>
+                              );
+                            })
+
                           ) : (
                             <tr>
                               <td colSpan={4} className="px-4 py-12 text-center text-slate-500">
@@ -1195,11 +1192,10 @@ export default function DashboardPage() {
                         const isRacik = item.type === "Racikan";
                         return (
                           <div key={item.type} className="p-4 rounded-xl bg-slate-950/40 border border-white/5 flex flex-col gap-2">
-                            <span className={`text-xs font-semibold px-2 py-0.5 rounded-md border w-fit ${
-                              isRacik
-                                ? "bg-indigo-500/10 text-indigo-400 border-indigo-500/20"
-                                : "bg-sky-500/10 text-sky-400 border-sky-500/20"
-                            }`}>
+                            <span className={`text-xs font-semibold px-2 py-0.5 rounded-md border w-fit ${isRacik
+                              ? "bg-indigo-500/10 text-indigo-400 border-indigo-500/20"
+                              : "bg-sky-500/10 text-sky-400 border-sky-500/20"
+                              }`}>
                               {item.type}
                             </span>
                             <div className="flex flex-col mt-2">
@@ -1374,13 +1370,12 @@ export default function DashboardPage() {
                             <span className="text-[10px] text-slate-500 leading-normal">{item.desc}</span>
                           </div>
                           <div className="text-right">
-                            <span className={`text-xs font-bold font-mono px-2 py-0.5 rounded ${
-                              item.value > 0
-                                ? item.type === "warn"
-                                  ? "bg-amber-500/10 text-amber-400 border border-amber-500/20"
-                                  : "bg-indigo-500/10 text-indigo-400 border border-indigo-500/20"
-                                : "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
-                            }`}>
+                            <span className={`text-xs font-bold font-mono px-2 py-0.5 rounded ${item.value > 0
+                              ? item.type === "warn"
+                                ? "bg-amber-500/10 text-amber-400 border border-amber-500/20"
+                                : "bg-indigo-500/10 text-indigo-400 border border-indigo-500/20"
+                              : "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
+                              }`}>
                               {formatNum(item.value)}
                             </span>
                           </div>
@@ -1433,13 +1428,13 @@ export default function DashboardPage() {
                     <h3 className="text-sm font-semibold tracking-tight text-slate-200">Bagan Alur Ingesti & Pembersihan Data (ETL)</h3>
                     <p className="text-xs text-slate-400">Gambaran pemrosesan data dari file mentah SQL hingga ke visualisasi dashboard</p>
                   </div>
-                  
+
                   {/* SVG Flowchart */}
                   <div className="bg-slate-950/30 p-6 rounded-xl border border-white/5 flex flex-col md:flex-row items-center justify-around gap-6">
                     <div className="flex flex-col items-center p-4 rounded-xl bg-slate-900 border border-white/5 w-40 text-center shadow-md">
                       <Database className="h-8 w-8 text-sky-400 mb-2" />
                       <span className="text-xs font-bold text-white">sales.sql</span>
-                      <span className="text-[9px] text-slate-500 mt-1">MySQL/MariaDB Dump<br/>(70.6 MB)</span>
+                      <span className="text-[9px] text-slate-500 mt-1">MySQL/MariaDB Dump<br />(70.6 MB)</span>
                     </div>
 
                     <div className="text-slate-600 font-bold text-xl md:rotate-0 rotate-90">→</div>
@@ -1447,7 +1442,7 @@ export default function DashboardPage() {
                     <div className="flex flex-col items-center p-4 rounded-xl bg-slate-900 border border-indigo-500/20 w-44 text-center shadow-md">
                       <Cpu className="h-8 w-8 text-indigo-400 mb-2" />
                       <span className="text-xs font-bold text-white">Data Pipeline</span>
-                      <span className="text-[9px] text-slate-400 mt-1">Jupyter Notebook Parser<br/>Type Cast & Join Tables</span>
+                      <span className="text-[9px] text-slate-400 mt-1">Jupyter Notebook Parser<br />Type Cast & Join Tables</span>
                     </div>
 
                     <div className="text-slate-600 font-bold text-xl md:rotate-0 rotate-90">→</div>
@@ -1455,7 +1450,7 @@ export default function DashboardPage() {
                     <div className="flex flex-col items-center p-4 rounded-xl bg-slate-900 border border-emerald-500/20 w-44 text-center shadow-md">
                       <ShieldCheck className="h-8 w-8 text-emerald-400 mb-2" />
                       <span className="text-xs font-bold text-white">sales_clean.parquet</span>
-                      <span className="text-[9px] text-slate-400 mt-1">Clean Columns<br/>Flag Orphan & Return<br/>(12.7 MB)</span>
+                      <span className="text-[9px] text-slate-400 mt-1">Clean Columns<br />Flag Orphan & Return<br />(12.7 MB)</span>
                     </div>
 
                     <div className="text-slate-600 font-bold text-xl md:rotate-0 rotate-90">→</div>
@@ -1463,7 +1458,7 @@ export default function DashboardPage() {
                     <div className="flex flex-col items-center p-4 rounded-xl bg-linear-to-tr from-sky-950 to-indigo-950 border border-sky-500/30 w-44 text-center shadow-lg shadow-sky-500/5">
                       <Activity className="h-8 w-8 text-sky-400 mb-2 animate-pulse" />
                       <span className="text-xs font-bold text-white">Next.js App</span>
-                      <span className="text-[9px] text-sky-300 mt-1">Aggregated JSON<br/>Interactive Filtering<br/>Client-side Dashboard</span>
+                      <span className="text-[9px] text-sky-300 mt-1">Aggregated JSON<br />Interactive Filtering<br />Client-side Dashboard</span>
                     </div>
                   </div>
                 </div>
