@@ -10,7 +10,7 @@ venv/
 env/
 ENV/
 
-# Specific User Requested Files
+# Specific Files
 rencana_proses_data_penjualan_apotek.md
 
 # Next.js / Node
