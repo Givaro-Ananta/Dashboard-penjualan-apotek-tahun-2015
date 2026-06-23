@@ -10,10 +10,6 @@ venv/
 env/
 ENV/
 
-# Large Data Files (Raw and Preprocessed)
-data/sales.sql
-output/
-
 # Specific User Requested Files
 rencana_proses_data_penjualan_apotek.md
 

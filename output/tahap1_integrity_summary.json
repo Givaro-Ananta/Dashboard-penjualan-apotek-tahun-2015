@@ -1,0 +1,21 @@
+{
+  "file_size_mb": 67.3,
+  "tabel_rows": {
+    "ms_product": 6878,
+    "ms_sales": 127064,
+    "det_sales": 514620,
+    "transaction": 399738
+  },
+  "integritas": {
+    "orphan_resep_det_sales": 30750,
+    "orphan_resep_ms_sales": 110,
+    "orphan_kd_obat_det_sales": 6,
+    "orphan_kd_obat_transaction": 6,
+    "excl_resep_transaction": 0,
+    "excl_resep_ms_sales": 110
+  },
+  "anomali": {
+    "qty_negatif_det_sales": 278,
+    "qty_negatif_transaction": 262
+  }
+}

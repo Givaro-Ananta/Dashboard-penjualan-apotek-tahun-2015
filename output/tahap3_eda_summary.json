@@ -1,0 +1,286 @@
+{
+  "total_omzet_kotor": 15305738579.840652,
+  "total_cogs": 11492528466.2509,
+  "total_margin_keuntungan": 3813210113.589754,
+  "persentase_margin_total": 33.17990575170358,
+  "jumlah_resep_unik": 126932,
+  "jumlah_item_terjual": 4127902,
+  "kinerja_bulanan": [
+    {
+      "Bulan_Nama": "01 - Januari",
+      "jumlah_resep": 7231,
+      "qty_terjual": 127317,
+      "omzet": 663048120.448636,
+      "margin": 172960561.031536,
+      "margin_pct": 35.29176729914379
+    },
+    {
+      "Bulan_Nama": "02 - Februari",
+      "jumlah_resep": 9589,
+      "qty_terjual": 276694,
+      "omzet": 955002659.1690845,
+      "margin": 226326581.4423845,
+      "margin_pct": 31.05997141397462
+    },
+    {
+      "Bulan_Nama": "03 - Maret",
+      "jumlah_resep": 10277,
+      "qty_terjual": 324477,
+      "omzet": 1296809012.977971,
+      "margin": 321085039.431071,
+      "margin_pct": 32.907363981626865
+    },
+    {
+      "Bulan_Nama": "04 - April",
+      "jumlah_resep": 10740,
+      "qty_terjual": 317725,
+      "omzet": 1247735123.1231682,
+      "margin": 314126454.2140683,
+      "margin_pct": 33.64648001620612
+    },
+    {
+      "Bulan_Nama": "05 - Mei",
+      "jumlah_resep": 9858,
+      "qty_terjual": 287722,
+      "omzet": 1211530057.8559065,
+      "margin": 309248407.5921065,
+      "margin_pct": 34.274043753598626
+    },
+    {
+      "Bulan_Nama": "06 - Juni",
+      "jumlah_resep": 11511,
+      "qty_terjual": 353070,
+      "omzet": 1275534846.7354102,
+      "margin": 317277595.7354103,
+      "margin_pct": 33.10985598118999
+    },
+    {
+      "Bulan_Nama": "07 - Juli",
+      "jumlah_resep": 9661,
+      "qty_terjual": 299947,
+      "omzet": 1175543132.400145,
+      "margin": 296045610.581945,
+      "margin_pct": 33.66076688538302
+    },
+    {
+      "Bulan_Nama": "08 - Agustus",
+      "jumlah_resep": 11205,
+      "qty_terjual": 374268,
+      "omzet": 1350140135.4398525,
+      "margin": 342783561.5307525,
+      "margin_pct": 34.02802646143092
+    },
+    {
+      "Bulan_Nama": "09 - September",
+      "jumlah_resep": 11796,
+      "qty_terjual": 470588,
+      "omzet": 1705274048.6216,
+      "margin": 431836734.9616,
+      "margin_pct": 33.911110529693325
+    },
+    {
+      "Bulan_Nama": "10 - Oktober",
+      "jumlah_resep": 11962,
+      "qty_terjual": 435128,
+      "omzet": 1638384374.58116,
+      "margin": 407216482.58116,
+      "margin_pct": 33.07562560940795
+    },
+    {
+      "Bulan_Nama": "11 - November",
+      "jumlah_resep": 11258,
+      "qty_terjual": 420076,
+      "omzet": 1415798411.24028,
+      "margin": 338895659.24028,
+      "margin_pct": 31.46947657166726
+    },
+    {
+      "Bulan_Nama": "12 - Desember",
+      "jumlah_resep": 11844,
+      "qty_terjual": 440890,
+      "omzet": 1370938657.24744,
+      "margin": 335407425.24744,
+      "margin_pct": 32.38988983457719
+    }
+  ],
+  "kinerja_jenis_transaksi": [
+    {
+      "jenis_transaksi": "Kerjasama / Karyawan",
+      "jumlah_resep": 2349,
+      "omzet": 137066634.26,
+      "margin": 23644276.26,
+      "omzet_pct": 0.8977592852548856,
+      "margin_pct": 0.6215113754946867
+    },
+    {
+      "jenis_transaksi": "Lainnya (PR)",
+      "jumlah_resep": 8,
+      "omzet": 1453033.0,
+      "margin": 341818.0,
+      "omzet_pct": 0.009517078131920289,
+      "margin_pct": 0.00898499801866394
+    },
+    {
+      "jenis_transaksi": "Obat Bebas",
+      "jumlah_resep": 87,
+      "omzet": 6819170.0,
+      "margin": 1840832.0,
+      "omzet_pct": 0.044664211814079154,
+      "margin_pct": 0.048387948770085766
+    },
+    {
+      "jenis_transaksi": "Rawat Inap",
+      "jumlah_resep": 44834,
+      "omzet": 4515453488.2160015,
+      "margin": 1121308491.8608015,
+      "omzet_pct": 29.57532530121731,
+      "margin_pct": 29.474616836095084
+    },
+    {
+      "jenis_transaksi": "Rawat Jalan",
+      "jumlah_resep": 71941,
+      "omzet": 9641765536.354652,
+      "margin": 2403614233.4589524,
+      "omzet_pct": 63.151653086436134,
+      "margin_pct": 63.181193281983774
+    },
+    {
+      "jenis_transaksi": "Resep Luar / Unit Lain",
+      "jumlah_resep": 7735,
+      "omzet": 965079745.625,
+      "margin": 253569495.625,
+      "omzet_pct": 6.321081037145669,
+      "margin_pct": 6.665305559637701
+    }
+  ],
+  "top_5_produk_qty": [
+    {
+      "KD_OBAT": "AI-0853",
+      "NAMA": "Metformin 500 mg",
+      "total_qty": 173131,
+      "total_omzet": 24727794.88
+    },
+    {
+      "KD_OBAT": "AI-0943",
+      "NAMA": "Neurodex FC komb",
+      "total_qty": 167570,
+      "total_omzet": 47678674.015
+    },
+    {
+      "KD_OBAT": "AI-0190",
+      "NAMA": "Candesartan TI 8 mg",
+      "total_qty": 160495,
+      "total_omzet": 652803605.82
+    },
+    {
+      "KD_OBAT": "AI-0958",
+      "NAMA": "Nitrokaf Retard Forte 5 mg",
+      "total_qty": 138153,
+      "total_omzet": 384259032.65
+    },
+    {
+      "KD_OBAT": "AI-0406",
+      "NAMA": "Eclid 50 mg",
+      "total_qty": 133644,
+      "total_omzet": 148531250.415
+    }
+  ],
+  "top_5_produk_omzet": [
+    {
+      "KD_OBAT": "AI-0618",
+      "NAMA": "Herceptin 440 mg/20",
+      "total_qty": 71,
+      "total_omzet": 1740193497.0
+    },
+    {
+      "KD_OBAT": "AI-0165",
+      "NAMA": "Brexel 80 mg/vial",
+      "total_qty": 142,
+      "total_omzet": 700495766.09
+    },
+    {
+      "KD_OBAT": "AI-0190",
+      "NAMA": "Candesartan TI 8 mg",
+      "total_qty": 160495,
+      "total_omzet": 652803605.82
+    },
+    {
+      "KD_OBAT": "AI-0958",
+      "NAMA": "Nitrokaf Retard Forte 5 mg",
+      "total_qty": 138153,
+      "total_omzet": 384259032.65
+    },
+    {
+      "KD_OBAT": "AI-1325",
+      "NAMA": "Taxotere 80 mg",
+      "total_qty": 68,
+      "total_omzet": 332549190.84
+    }
+  ],
+  "dokter_teraktif": [
+    {
+      "KD_DOKTER": "001",
+      "jumlah_resep": 43289,
+      "total_omzet": 6752744764.395913,
+      "omzet_per_resep": 155992.16346868518
+    },
+    {
+      "KD_DOKTER": "000",
+      "jumlah_resep": 28467,
+      "total_omzet": 2208657542.55828,
+      "omzet_per_resep": 77586.59298690695
+    },
+    {
+      "KD_DOKTER": "003",
+      "jumlah_resep": 7175,
+      "total_omzet": 756105347.58,
+      "omzet_per_resep": 105380.53624808363
+    },
+    {
+      "KD_DOKTER": "002",
+      "jumlah_resep": 5751,
+      "total_omzet": 554405057.2,
+      "omzet_per_resep": 96401.50533820206
+    },
+    {
+      "KD_DOKTER": "004",
+      "jumlah_resep": 2637,
+      "total_omzet": 154368792.3966432,
+      "omzet_per_resep": 58539.549638469165
+    }
+  ],
+  "porsi_asuransi": [
+    {
+      "REG_AS": "A",
+      "jumlah_resep": 90,
+      "total_omzet": 9641007.2,
+      "total_margin": 1761580.2
+    },
+    {
+      "REG_AS": "I",
+      "jumlah_resep": 24116,
+      "total_omzet": 3260268484.4986,
+      "total_margin": 633230432.6804
+    },
+    {
+      "REG_AS": "R",
+      "jumlah_resep": 102748,
+      "total_omzet": 11997728115.757053,
+      "total_margin": 3169327134.324354
+    }
+  ],
+  "porsi_racik": [
+    {
+      "RACIK": "N",
+      "jumlah_resep": 126894,
+      "total_omzet": 14958664910.913094,
+      "omzet_per_resep": 117883.15374180886
+    },
+    {
+      "RACIK": "Y",
+      "jumlah_resep": 60,
+      "total_omzet": 308972696.54256,
+      "omzet_per_resep": 5149544.942376
+    }
+  ]
+}
